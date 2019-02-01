@@ -1,0 +1,22 @@
+{
+  "name": "ConstraintDSL",
+  "version": "0.1.0",
+  "summary": "A short description of ConstraintDSL.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/fadi-botros/ConstraintDSL",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fadi-botros": "fadi.botros@grapesnberries.com"
+  },
+  "source": {
+    "git": "https://github.com/fadi-botros/ConstraintDSL.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ConstraintDSL/Classes/**/*"
+}

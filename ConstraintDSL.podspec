@@ -1,42 +1,27 @@
-#
-# Be sure to run `pod lib lint ConstraintDSL.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'ConstraintDSL'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ConstraintDSL.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'A small DSL library to make the constraints more descriptive'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  This is a small library that turns writing constraints into something more descriptive:
+  just small equations, as it is in Apple's representation.
+
+  Something like:
+
+      oneView.topConstraint ==== otherView.topConstraint + 16
+      oneView.width ==== (otherView.width * 0.5) - 16
+
                        DESC
 
-  s.homepage         = 'https://github.com/fadi-botros/ConstraintDSL'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://bitbucket.org/botros_fadi/ios-constraint-dsl'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'fadi-botros' => 'fadi.botros@grapesnberries.com' }
-  s.source           = { :git => 'https://github.com/fadi-botros/ConstraintDSL.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'fadi-botros' => 'botros_fadi@yahoo.com' }
+  s.source           = { :git => 'https://bitbucket.org/botros_fadi/ios-constraint-dsl.git', :tag => s.version.to_s }
+  s.swift_version = '4.2'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'ConstraintDSL/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'ConstraintDSL' => ['ConstraintDSL/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

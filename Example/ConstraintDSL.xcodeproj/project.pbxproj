@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		873B5B2C5E4D2264A6696123 /* Pods_ConstraintDSL_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF03AEC55A353A82758BAEE1 /* Pods_ConstraintDSL_Tests.framework */; };
 		AEB3C7A473B6A68C3D981D69 /* Pods_ConstraintDSL_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8B3EFC20015DC704B50473 /* Pods_ConstraintDSL_Example.framework */; };
-		C9CCB222FFDD43FA47AA02EC /* libPods-ConstraintDSL_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +29,10 @@
 /* Begin PBXFileReference section */
 		24E66A9A68D6FE35FD97F4B8 /* Pods-ConstraintDSL_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		500F50FDF4AB9099688C10D0 /* Pods-ConstraintDSL_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConstraintDSL_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ConstraintDSL_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConstraintDSL_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ConstraintDSL_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstraintDSL_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +44,7 @@
 		97C9895C83EE1F5A98980C37 /* ConstraintDSL.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ConstraintDSL.podspec; path = ../ConstraintDSL.podspec; sourceTree = "<group>"; };
 		A22E78EDEF46E92647428F26 /* Pods-ConstraintDSL_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A7DD5CEB72E890B82C08A0FB /* Pods-ConstraintDSL_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CF03AEC55A353A82758BAEE1 /* Pods_ConstraintDSL_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConstraintDSL_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9CCB222FFDD43FA47AA02EC /* libPods-ConstraintDSL_Tests.a in Frameworks */,
+				873B5B2C5E4D2264A6696123 /* Pods_ConstraintDSL_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8B3EFC20015DC704B50473 /* Pods_ConstraintDSL_Example.framework */,
-				554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */,
+				CF03AEC55A353A82758BAEE1 /* Pods_ConstraintDSL_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +102,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -189,6 +186,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				E81CE40FC0E8C681DB010F09 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,7 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -270,7 +267,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ConstraintDSL-framework/ConstraintDSL.framework",
+				"${BUILT_PRODUCTS_DIR}/ConstraintDSL/ConstraintDSL.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -327,6 +324,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E81CE40FC0E8C681DB010F09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ConstraintDSL/ConstraintDSL.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConstraintDSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -358,14 +381,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

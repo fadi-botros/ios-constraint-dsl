@@ -1,0 +1,27 @@
+PODS:
+  - ConstraintDSL (0.1.0)
+  - Nimble (7.3.3)
+  - Quick (1.3.4)
+
+DEPENDENCIES:
+  - ConstraintDSL (from `../`)
+  - Nimble (~> 7.3.2)
+  - Quick (~> 1.3.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  ConstraintDSL:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ConstraintDSL: 7dfd8201c64006f3e75c9e9012915677ac1cb237
+  Nimble: 3b434b1e7d0a92603a13550a82880b0d952f518e
+  Quick: f4f7f063c524394c73ed93ac70983c609805d481
+
+PODFILE CHECKSUM: f8eb49d7cd84335302abc3c1a5a15d1e95a8b470
+
+COCOAPODS: 1.5.3

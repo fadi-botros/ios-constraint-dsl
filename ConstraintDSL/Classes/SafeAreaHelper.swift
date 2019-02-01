@@ -7,6 +7,13 @@
 
 import UIKit
 
-class SafeAreaHelper: AnyObject {
-
+public extension UIView {
+    @available(iOS 9.0, *)
+    public var safeAreaHelper: UILayoutGuide {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide
+        } else {
+            return layoutMarginsGuide
+        }
+    }
 }
