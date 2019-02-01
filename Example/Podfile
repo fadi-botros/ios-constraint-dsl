@@ -1,12 +1,14 @@
-use_frameworks!
+def shared
+    pod 'ConstraintDSL', :path => '../'
+end
 
 target 'ConstraintDSL_Example' do
-  pod 'ConstraintDSL', :path => '../'
+    use_frameworks!
+    shared
+end
 
-  target 'ConstraintDSL_Tests' do
-    inherit! :search_paths
-
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.2'
-  end
+target 'ConstraintDSL_Tests' do
+    shared
+    pod 'Quick', '~> 1.3.2'
+    pod 'Nimble', '~> 7.3.2'
 end

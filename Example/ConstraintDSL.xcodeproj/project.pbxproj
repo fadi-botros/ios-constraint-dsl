@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B9512CB79C651ECD2D73992 /* Pods_ConstraintDSL_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49343A7D12879D9E05315C7 /* Pods_ConstraintDSL_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AEB3C7A473B6A68C3D981D69 /* Pods_ConstraintDSL_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8B3EFC20015DC704B50473 /* Pods_ConstraintDSL_Example.framework */; };
+		C9CCB222FFDD43FA47AA02EC /* libPods-ConstraintDSL_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		24E66A9A68D6FE35FD97F4B8 /* Pods-ConstraintDSL_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		500F50FDF4AB9099688C10D0 /* Pods-ConstraintDSL_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConstraintDSL_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ConstraintDSL_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConstraintDSL_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +42,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7B8B3EFC20015DC704B50473 /* Pods_ConstraintDSL_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConstraintDSL_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8035FB1A1B00702D9766CB97 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		8D619409BF4373A4D1F1959B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		97C9895C83EE1F5A98980C37 /* ConstraintDSL.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ConstraintDSL.podspec; path = ../ConstraintDSL.podspec; sourceTree = "<group>"; };
+		8035FB1A1B00702D9766CB97 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8D619409BF4373A4D1F1959B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		97C9895C83EE1F5A98980C37 /* ConstraintDSL.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ConstraintDSL.podspec; path = ../ConstraintDSL.podspec; sourceTree = "<group>"; };
 		A22E78EDEF46E92647428F26 /* Pods-ConstraintDSL_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A7DD5CEB72E890B82C08A0FB /* Pods-ConstraintDSL_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConstraintDSL_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D49343A7D12879D9E05315C7 /* Pods_ConstraintDSL_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConstraintDSL_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B9512CB79C651ECD2D73992 /* Pods_ConstraintDSL_Tests.framework in Frameworks */,
+				C9CCB222FFDD43FA47AA02EC /* libPods-ConstraintDSL_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8B3EFC20015DC704B50473 /* Pods_ConstraintDSL_Example.framework */,
-				D49343A7D12879D9E05315C7 /* Pods_ConstraintDSL_Tests.framework */,
+				554F2B862D181702E346782E /* libPods-ConstraintDSL_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,7 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				534D38ACD096281F51F837B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,7 +270,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ConstraintDSL/ConstraintDSL.framework",
+				"${BUILT_PRODUCTS_DIR}/ConstraintDSL-framework/ConstraintDSL.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -282,30 +281,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Example/Pods-ConstraintDSL_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		534D38ACD096281F51F837B9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConstraintDSL_Tests/Pods-ConstraintDSL_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		57F9EDCC3733C5382EE18029 /* [CP] Check Pods Manifest.lock */ = {
