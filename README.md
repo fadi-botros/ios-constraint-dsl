@@ -68,6 +68,16 @@ it, simply add the following line to your Podfile:
 pod 'ConstraintDSL'
 ```
 
+## Release notes
+
+ - 0.1.0: Initial release
+ - 0.2.0: 
+   * Added `<===` and `>===` operators, which makes the `.lessThanOrEqual` and `.greaterThanOrEqual` inequalities.
+   * Made the left hand side also an equation, so that something like that possible:
+```swift
+   view.widthConstraint * 2 ==== superView.widthConstraint
+```
+
 ## Author
 
 fadi-botros, botros_fadi@yahoo.com

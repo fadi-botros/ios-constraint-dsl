@@ -55,4 +55,6 @@ public func -<T: LeftHandSide>(_ lhs: T, _ rhs: Double) -> LeftHandSideImpl<T> {
 }
 
 infix operator ====: AssignmentPrecedence
+infix operator >===: AssignmentPrecedence
+infix operator <===: AssignmentPrecedence
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ConstraintDSL'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A small DSL library to make the constraints more descriptive'
 
   s.description      = <<-DESC
