@@ -1,0 +1,6 @@
+framework module ConstraintDSL {
+  umbrella header "ConstraintDSL-umbrella.h"
+
+  export *
+  module * { export * }
+}

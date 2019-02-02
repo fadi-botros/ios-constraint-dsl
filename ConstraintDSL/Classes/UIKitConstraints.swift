@@ -10,139 +10,150 @@ import UIKit
 public protocol UIKitConstraint: LeftHandSide {
 }
 
-public struct Constraint: UIKitConstraint {
-    public let view: UIView
-    public let attribute: NSLayoutAttribute
+/// A marker interface, to mark anything constrainable, typically for `UIView` and `UILayoutGuide`
+public protocol Constrainable: class {
 }
 
-public struct MarginableConstraint: UIKitConstraint {
-    public let constraint: Constraint
-    let marginedAttribute: NSLayoutAttribute
-
-    @available(iOS 8.0, *)
-    fileprivate var margined: Constraint { return Constraint(view: constraint.view,
-                                                             attribute: marginedAttribute) }
-    public var view: Constraint.T { return constraint.view }
-    public var attribute: Constraint.U { return constraint.attribute }
+extension UIView: Constrainable {
 }
 
-public extension UIView {
-    public var topConstraint: MarginableConstraint {
+@available(iOS 9.0, *)
+extension UILayoutGuide: Constrainable {
+}
+
+public struct Constraint<W: NSObject & Constrainable>: UIKitConstraint {
+    public let view: W
+    public let attribute: NSLayoutConstraint.Attribute
+}
+
+public struct MarginableConstraint<W: NSObject & Constrainable>: UIKitConstraint {
+    public let constraint: Constraint<W>
+    fileprivate let marginedAttribute: NSLayoutConstraint.Attribute
+
+    @available(iOS 8.0, *)
+    var margined: Constraint<W> { return Constraint<T>(view: constraint.view,
+                                                       attribute: marginedAttribute) }
+    public var view: W { return constraint.view }
+    public var attribute: Constraint<W>.U { return constraint.attribute }
+}
+
+public extension Constrainable where Self: NSObject {
+    public var topConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .top),
-                                        marginedAttribute: .topMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .top),
+                                              marginedAttribute: .topMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .top),
-                                        marginedAttribute: .top)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .top),
+                                              marginedAttribute: .top)
         }
     }
 
-    public var bottomConstraint: MarginableConstraint {
+    public var bottomConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .bottom),
-                                        marginedAttribute: .bottomMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .bottom),
+                                              marginedAttribute: .bottomMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .bottom),
-                                        marginedAttribute: .bottom)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .bottom),
+                                              marginedAttribute: .bottom)
         }
     }
 
-    public var leftConstraint: MarginableConstraint {
+    public var leftConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .left),
-                                        marginedAttribute: .leftMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .left),
+                                              marginedAttribute: .leftMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .left),
-                                        marginedAttribute: .left)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .left),
+                                              marginedAttribute: .left)
         }
     }
 
-    public var rightConstraint: MarginableConstraint {
+    public var rightConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .right),
-                                        marginedAttribute: .rightMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .right),
+                                              marginedAttribute: .rightMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .right),
-                                        marginedAttribute: .right)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .right),
+                                              marginedAttribute: .right)
         }
     }
 
-    public var leadingConstraint: MarginableConstraint {
+    public var leadingConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .leading),
-                                        marginedAttribute: .leadingMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .leading),
+                                              marginedAttribute: .leadingMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .leading),
-                                        marginedAttribute: .leading)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .leading),
+                                              marginedAttribute: .leading)
         }
     }
 
-    public var trailingConstraint: MarginableConstraint {
+    public var trailingConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .trailing),
-                                        marginedAttribute: .trailingMargin)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .trailing),
+                                              marginedAttribute: .trailingMargin)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .trailing),
-                                        marginedAttribute: .trailing)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .trailing),
+                                              marginedAttribute: .trailing)
         }
     }
 
-    public var centerXConstraint: MarginableConstraint {
+    public var centerXConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .centerX),
-                                        marginedAttribute: .centerXWithinMargins)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .centerX),
+                                              marginedAttribute: .centerXWithinMargins)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .centerX),
-                                        marginedAttribute: .centerX)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .centerX),
+                                              marginedAttribute: .centerX)
         }
     }
 
-    public var centerYConstraint: MarginableConstraint {
+    public var centerYConstraint: MarginableConstraint<Self> {
         if #available(iOS 8.0, *) {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .centerY),
-                                        marginedAttribute: .centerYWithinMargins)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .centerY),
+                                              marginedAttribute: .centerYWithinMargins)
         } else {
-            return MarginableConstraint(constraint: Constraint(view: self, attribute: .centerY),
-                                        marginedAttribute: .centerY)
+            return MarginableConstraint<Self>(constraint: Constraint<Self>(view: self, attribute: .centerY),
+                                              marginedAttribute: .centerY)
         }
     }
 
-    public var widthConstraint: Constraint {
-        return Constraint(view: self, attribute: .width)
+    public var widthConstraint: Constraint<Self> {
+        return Constraint<Self>(view: self, attribute: .width)
     }
 
-    public var heightConstraint: Constraint {
-        return Constraint(view: self, attribute: .height)
+    public var heightConstraint: Constraint<Self> {
+        return Constraint<Self>(view: self, attribute: .height)
     }
 
-    public var lastBaselineConstraint: Constraint {
-        return Constraint(view: self, attribute: .lastBaseline)
+    public var lastBaselineConstraint: Constraint<Self> {
+        return Constraint<Self>(view: self, attribute: .lastBaseline)
     }
 
     @available(iOS 8.0, *)
-    public var firstBaselineConstraint: Constraint {
-        return Constraint(view: self, attribute: .firstBaseline)
+    public var firstBaselineConstraint: Constraint<Self> {
+        return Constraint<Self>(view: self, attribute: .firstBaseline)
     }
 }
 
 fileprivate protocol SideInConstraintPointOfView {
     associatedtype T
     var view: T { get }
-    var attribute: NSLayoutAttribute { get }
+    var attribute: NSLayoutConstraint.Attribute { get }
     var constant: CGFloat { get }
     var multiplier: CGFloat { get }
 }
 
 fileprivate struct LeftSideInConstriantPointOfView: SideInConstraintPointOfView {
     let view: Any
-    let attribute: NSLayoutAttribute
+    let attribute: NSLayoutConstraint.Attribute
     let constant: CGFloat
     let multiplier: CGFloat
 }
 
 fileprivate struct RightSideInConstriantPointOfView: SideInConstraintPointOfView {
     let view: Any?
-    let attribute: NSLayoutAttribute
+    let attribute: NSLayoutConstraint.Attribute
     let constant: CGFloat
     let multiplier: CGFloat
 }
@@ -152,33 +163,28 @@ fileprivate func rightSide<T: RightHandSide>(side: T) -> RightSideInConstriantPo
                                             constant: side.constant, multiplier: side.multiplier)
 }
 
-fileprivate func rightSide<T: UIKitConstraint>(side: T) -> RightSideInConstriantPointOfView where T.U == NSLayoutAttribute {
+fileprivate func rightSide<T: LeftHandSide>(side: T) -> RightSideInConstriantPointOfView where T.U == NSLayoutConstraint.Attribute, T.T: NSObject, T.T: Constrainable {
     return RightSideInConstriantPointOfView(view: side.view, attribute: side.attribute, constant: side.constant, multiplier: side.multiplier)
 }
 
-fileprivate func leftSide<T: UIKitConstraint>(side: T) -> LeftSideInConstriantPointOfView where T.U == NSLayoutAttribute {
+fileprivate func leftSide<T: UIKitConstraint>(side: T) -> LeftSideInConstriantPointOfView where T.U == NSLayoutConstraint.Attribute {
     return LeftSideInConstriantPointOfView(view: side.view, attribute: side.attribute, constant: side.constant, multiplier: side.multiplier)
 }
 
 fileprivate func uiConstraintCommon<Left: SideInConstraintPointOfView, Right: SideInConstraintPointOfView>(left: Left, right: Right) -> NSLayoutConstraint where Left.T == Any, Right.T == Any? {
-
-    return NSLayoutConstraint.init(item: left.view, attribute: left.attribute, relatedBy: .equal, toItem: right.view, attribute: right.attribute, multiplier: right.multiplier / left.multiplier, constant: (right.constant - left.constant) / left.constant)
+    return NSLayoutConstraint(item: left.view, attribute: left.attribute, relatedBy: .equal, toItem: right.view, attribute: right.attribute, multiplier: right.multiplier / left.multiplier, constant: (right.constant - left.constant) / left.multiplier)
 }
 
-public func constraint<Left: UIKitConstraint, Right: RightHandSide>(_ equ: Equation<Left, Right>) -> NSLayoutConstraint where Left.T: UIView, Left.U == NSLayoutAttribute {
-
-    let left = leftSide(side: equ.leftHandSide)
-    let right = rightSide(side: equ.rightHandSide)
+public func ====<T: UIKitConstraint, U: LeftHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.U == NSLayoutConstraint.Attribute, U.U == NSLayoutConstraint.Attribute, U.T: NSObject, U.T: Constrainable {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
 
     return uiConstraintCommon(left: left, right: right)
 }
 
-public func constraint<Left: UIKitConstraint, Right: UIKitConstraint>(_ equ: EquationBothLefts<Left, Right>) -> NSLayoutConstraint where Left.T: UIView, Left.U == NSLayoutAttribute,
-    Right.T: UIView, Right.U == NSLayoutAttribute {
+public func ====<T: UIKitConstraint, U: RightHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.U == NSLayoutConstraint.Attribute {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
 
-        let left = leftSide(side: equ.leftHandSide)
-        let right = rightSide(side: equ.rightHandSide)
-
-        return uiConstraintCommon(left: left, right: right)
+    return uiConstraintCommon(left: left, right: right)
 }
-

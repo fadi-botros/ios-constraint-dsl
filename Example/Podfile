@@ -1,9 +1,9 @@
 def shared
+    use_frameworks!
     pod 'ConstraintDSL', :path => '../'
 end
 
 target 'ConstraintDSL_Example' do
-    use_frameworks!
     shared
 end
 
