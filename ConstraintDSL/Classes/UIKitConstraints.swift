@@ -167,24 +167,52 @@ fileprivate func rightSide<T: LeftHandSide>(side: T) -> RightSideInConstriantPoi
     return RightSideInConstriantPointOfView(view: side.view, attribute: side.attribute, constant: side.constant, multiplier: side.multiplier)
 }
 
-fileprivate func leftSide<T: UIKitConstraint>(side: T) -> LeftSideInConstriantPointOfView where T.U == NSLayoutConstraint.Attribute {
+fileprivate func leftSide<T: LeftHandSide>(side: T) -> LeftSideInConstriantPointOfView where T.U == NSLayoutConstraint.Attribute, T.T: NSObject & Constrainable {
     return LeftSideInConstriantPointOfView(view: side.view, attribute: side.attribute, constant: side.constant, multiplier: side.multiplier)
 }
 
-fileprivate func uiConstraintCommon<Left: SideInConstraintPointOfView, Right: SideInConstraintPointOfView>(left: Left, right: Right) -> NSLayoutConstraint where Left.T == Any, Right.T == Any? {
-    return NSLayoutConstraint(item: left.view, attribute: left.attribute, relatedBy: .equal, toItem: right.view, attribute: right.attribute, multiplier: right.multiplier / left.multiplier, constant: (right.constant - left.constant) / left.multiplier)
+fileprivate func uiConstraintCommon<Left: SideInConstraintPointOfView, Right: SideInConstraintPointOfView>(left: Left, right: Right, constraintType: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint where Left.T == Any, Right.T == Any? {
+    return NSLayoutConstraint(item: left.view, attribute: left.attribute, relatedBy: constraintType, toItem: right.view, attribute: right.attribute, multiplier: right.multiplier / left.multiplier, constant: (right.constant - left.constant) / left.multiplier)
 }
 
-public func ====<T: UIKitConstraint, U: LeftHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.U == NSLayoutConstraint.Attribute, U.U == NSLayoutConstraint.Attribute, U.T: NSObject, U.T: Constrainable {
+public func ====<T: LeftHandSide, U: LeftHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute, U.U == NSLayoutConstraint.Attribute, U.T: NSObject, U.T: Constrainable {
     let left = leftSide(side: lhs)
     let right = rightSide(side: rhs)
 
     return uiConstraintCommon(left: left, right: right)
 }
 
-public func ====<T: UIKitConstraint, U: RightHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.U == NSLayoutConstraint.Attribute {
+public func ====<T: LeftHandSide, U: RightHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute {
     let left = leftSide(side: lhs)
     let right = rightSide(side: rhs)
 
     return uiConstraintCommon(left: left, right: right)
+}
+
+public func >===<T: LeftHandSide, U: LeftHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute, U.U == NSLayoutConstraint.Attribute, U.T: NSObject, U.T: Constrainable {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
+
+    return uiConstraintCommon(left: left, right: right, constraintType: .greaterThanOrEqual)
+}
+
+public func >===<T: LeftHandSide, U: RightHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
+
+    return uiConstraintCommon(left: left, right: right, constraintType: .greaterThanOrEqual)
+}
+
+public func <===<T: LeftHandSide, U: LeftHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute, U.U == NSLayoutConstraint.Attribute, U.T: NSObject, U.T: Constrainable {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
+
+    return uiConstraintCommon(left: left, right: right, constraintType: .lessThanOrEqual)
+}
+
+public func <===<T: LeftHandSide, U: RightHandSide>(_ lhs: T, _ rhs: U) -> NSLayoutConstraint where T.T: NSObject & Constrainable, T.U == NSLayoutConstraint.Attribute {
+    let left = leftSide(side: lhs)
+    let right = rightSide(side: rhs)
+
+    return uiConstraintCommon(left: left, right: right, constraintType: .lessThanOrEqual)
 }
