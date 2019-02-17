@@ -19,6 +19,17 @@ into just:
 left.attributeConstraint ==== (right.attributeConstraint * multiplier) + constant
 ```
 
+## Example:
+
+```swift
+// Center the text field in the view called superView
+textField.centerXConstraint.margined ==== superview.centerXConstraint.margined
+textField.centerYConstraint.margined ==== superview.centerYConstraint.margined
+
+// Ensure there is at least 16 pts as a space between the top of the text field and the superView
+textField.topConstraint >=== superview.topConstraint + 16
+```
+
 ---
 
 Available attributes:
@@ -27,8 +38,8 @@ Available attributes:
 - `topConstraint.margined` :  Equivalent to `NSLayoutConstraint.topMargin`
 - `bottomConstraint`: Equivalent to `NSLayoutConstraint.bottom` 
 - `bottomConstraint.margined`: Equivalent to `NSLayoutConstraint.bottomMargin` 
-- `leadingConstraint`: Equivalent to `NSLayoutConstraint.left` 
-- `leadingConstraint.margined`: Equivalent to `NSLayoutConstraint.leftMargin` 
+- `leadingConstraint`: Equivalent to `NSLayoutConstraint.leading` 
+- `leadingConstraint.margined`: Equivalent to `NSLayoutConstraint.leadingMargin` 
 - `trailingConstraint`: Equivalent to `NSLayoutConstraint.trailing` 
 - `trailingConstraint.margined`: Equivalent to `NSLayoutConstraint.trailingMargin` 
 - `centerXConstraint`: Equivalent to `NSLayoutConstraint.centerX` 
@@ -52,8 +63,7 @@ Not recommended (unless you **want not locale aware** constraints):
  - Margined constraints and lastBaseline constraints are for only iOS 8.0 or later
  
 ### N.B:
- - There is a tiny helper extension for any view called `safeAreaHelper` that returns the safe area layout
- guides if available (iOS is 11.0 or later), and returns layout margins guides if iOS 9.0 or later but earlier than 11.0.
+ - There is a tiny helper extension for any view called `safeAreaHelper` that returns the safe area layout guides if available (iOS is 11.0 or later), and returns layout margins guides if iOS 9.0 or later but earlier than 11.0.
 
 ## Example
 
